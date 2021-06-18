@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contant_parant {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: #000;
+    align-items: center;
+    justify-content: center;
+}
+div#dog_result p {
+    color: #fff;
+    font-family: cursive;
+}
+.inner_text {
+    display: inline-block;
+}
+div#dog_result {
+    width: 220px;
+    height: 240px;
+    display: flex;
+    background: rgb(2,0,36);
+    background: linear-gradient(
+203deg
+, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 47%, rgba(0,116,255,1) 100%);
+    padding: 9px;
+    align-items: center;
+    justify-content: center;
+}
+button#dog_btn {
+    width: 100%;
+    height: 48px;
+    font-size: 20px;
+    background: rgb(131,58,180);
+    background: linear-gradient(
+90deg
+, rgba(131,58,180,1) 0%, rgba(29,253,123,1) 53%, rgba(252,176,69,1) 100%);
+    margin-top: 20px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+}
+button:active{
+    transform: scale(0.98);
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

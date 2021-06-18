@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch apis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contant_parant">
+        <div class="inner_text">
+            <div id="dog_result" class="cilid1">
+                <p>Random dog placeholder</p>
+                
+           </div>
+           <button  id="dog_btn">Get dog</button>
+        </div>
+    </div>
+ 
+  <script>
+    const dog_result = document.getElementById('dog_result');
+     let btn = document.getElementById('dog_btn');
+
+     btn = addEventListener('click',getrandomdog())
+    
+     function getrandomdog(){
+         fetch('https://random.dog/woof.json')
+         .then(res => res.json())
+         .then(data => {
+             if(data.url.includes('.mp4')){
+                getrandomdog()
+             }
+             else{
+                dog_result.innerHTML=`<img src="${data.url}" />`;
+             }
+         })
+     
+      }
+
+  </script>
+ 
+    
+</body>
+</html>
