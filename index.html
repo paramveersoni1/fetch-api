@@ -14,7 +14,7 @@
                 <p>Random dog placeholder</p>
                 
            </div>
-           <button  id="dog_btn">Get dog</button>
+           <button  id="dog_btn">Get cat</button>
         </div>
     </div>
  
@@ -22,21 +22,35 @@
     const dog_result = document.getElementById('dog_result');
      let btn = document.getElementById('dog_btn');
 
-     btn = addEventListener('click',getrandomdog())
-    
-     function getrandomdog(){
-         fetch('https://random.dog/woof.json')
+     btn.addEventListener('click',function(){
+         fetch('https://aws.random.cat/meow')
          .then(res => res.json())
          .then(data => {
-             if(data.url.includes('.mp4')){
-                getrandomdog()
+             if(data.file.includes('.mp4')){
+                dog_result.innerHTML="tuch the button again";
              }
-             else{
-                dog_result.innerHTML=`<img src="${data.url}" />`;
+            else{
+                dog_result.innerHTML=`<img src="${data.file}" />`;
              }
          })
+     })
      
-      }
+     
+      
+    
+    //  function getrandomdog(){
+    //      fetch('https://aws.random.cat/meow')
+    //      .then(res => res.json())
+    //      .then(data => {
+    //          if(data.file.includes('.mp4')){
+    //             getrandomdog()
+    //          }
+    //          else{
+    //             dog_result.innerHTML=`<img src="${data.file}" />`;
+    //          }
+    //      })
+     
+    //   }
 
   </script>
  
